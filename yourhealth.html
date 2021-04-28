@@ -8,7 +8,7 @@
   <body>
     <div class="left">
       <div style="width:200px;">
-        <span>BMR Calculator</span>
+        <span>Basal Metabolic Rate Calculator</span>
         <form action="#">
           <input type="radio" id="gender" name="gender" value="male" checked> Male<br>
           <input type="radio" id="gender" name="gender" value="female"> Female<br>
@@ -46,40 +46,26 @@
       </script>
       </div>
       <div>
-        <span>BMR Calculator</span>
+        <span>Resting Energy Expenditure Calculator</span>
         <form action="#">
-          <input type="radio" id="gender" name="gender" value="male" checked> Male<br>
-          <input type="radio" id="gender" name="gender" value="female"> Female<br>
-          Age (years):<br>
-          <input type="number" id="age" min="1" max="120"><br>
-          Height (cm):<br>
-          <input type="number" id="height" min="1" max="250"><br>
-          Weight (kg):<br>
-          <input type="number" id="weight" min="1" max="250"><br>
+          Volume of CO2 for 6 seconds of breathing (L):<br>
+          <input type="number" id="volume" min="1" max="120"><br>
         </form>
 
         <button type="button"
         onclick="">
-        Calculate BMR</button>
+        Calculate EE</button>
 
-        <p id="result">BMR</p><p>Calories/day</p>
+        <p id="result">REE</p><p>Calories/day</p>
         <script>
-        var bmr;  
-        function calcBMR() {
-          var age = document.getElementById("age").value;
-          var gender = document.getElementById("gender").value;
-          var height = document.getElementById("height").value;
-          var weight = document.getElementById("weight").value;
-          if (gender == "male") {
-          bmr = ( 10 * weight ) + ( 6.25 * height ) - ( 5 * age ) + 5;
-          }
-          else {
-          bmr = ( 10 * weight ) + ( 6.25 * height ) - ( 5 * age ) - 161;
-          } 
-        }
+        var ee;  
+        function calcEE() {
+          var volume = document.getElementById("volume").value;
+          ree = ((volume/6) * 278.12 + 66 * (volume/6)) * 1440;
+
         document.getElementsByTagName("button")[0].addEventListener("click", function() {
-          calcBMR();
-          document.getElementById('result').innerHTML = bmr;
+          calcEE();
+          document.getElementById('result').innerHTML = ree;
         })
       </script>
       </div>
