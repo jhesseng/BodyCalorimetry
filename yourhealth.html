@@ -56,7 +56,7 @@
         onclick="">
         Calculate REE</button>
 
-        <p id="result">REE</p><p>Calories/day</p>
+        <p id="reesult">REE</p><p>Calories/day</p>
         <script>
         var ee;  
         function calcEE() {
@@ -66,7 +66,7 @@
 
         document.getElementsByTagName("button")[0].addEventListener("click", function() {
           calcEE();
-          document.getElementById('result').innerHTML = ree;
+          document.getElementById('reesult').innerHTML = ree;
         })
       </script>
       </div>
